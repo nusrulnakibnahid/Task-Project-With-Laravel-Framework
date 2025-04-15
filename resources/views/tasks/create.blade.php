@@ -6,9 +6,9 @@
 
 <form method="POST" action="" enctype="multipart/form-data">
     @csrf
-    <div>
+    <div class="mb-3">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" class="form-control" placeholder="Enter Task Title">
+        <input type="text" name="title" class="form-control" required>
     </div>
 
 
