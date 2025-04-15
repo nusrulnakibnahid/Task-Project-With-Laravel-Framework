@@ -23,7 +23,13 @@
             <td>{{ $task->id }}</td>
             <td>{{ $task->title }}</td>
             <td>{{ $task->description }}</td>
-            <td><img src="{{ $task->image }}" width="60"></td>
+            <td>
+                @if ($task->image)
+                    <img src="{{ $task->image) }}" alt="Task Image" width="90">
+                @else
+                    No Image
+                @endif
+            </td>
 
         
             <td>
@@ -31,8 +37,6 @@
                 <button class="btn btn-danger btn-sm ">Delete</button>
             </td>
 
-
-            
         </tr>
             
         @endforeach
