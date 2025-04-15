@@ -10,7 +10,9 @@ class TaskController extends Controller
     public function index()
     {
         $tasks =  DB::table('tasks')->get();
-        return view('tasks.index', ['tasks' => $tasks]);
+        // return view('tasks.index', ['tasks' => $tasks]);
+        return view('tasks.index', compact('tasks'));
+
         
     }
 }
