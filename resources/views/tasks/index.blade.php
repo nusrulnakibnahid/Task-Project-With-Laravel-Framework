@@ -17,12 +17,15 @@
         </tr>
     </thead>
     <tbody>
-        
+        @foreach ($tasks as $task )
+
         <tr>
-            <td>01</td>
-            <td>Test Task </td>
-            <td>Test Description</td>
-            <td><img src="https://assets.manutd.com/AssetPicker/images/0/0/10/126/687707/Legends-Profile_Cristiano-Ronaldo1523460877263.jpg" width="90"></td>
+            <td>{{ $task->id }}</td>
+            <td>{{ $task->title }}</td>
+            <td>{{ $task->description }}</td>
+            <td><img src="{{ $task->image }}" width="60"></td>
+
+        
             <td>
                 <a href="" class="btn btn-warning btn-sm">Edit</a>
                 <button class="btn btn-danger btn-sm ">Delete</button>
@@ -31,6 +34,10 @@
 
             
         </tr>
+            
+        @endforeach
+        
+       
     </tbody>
 
    
