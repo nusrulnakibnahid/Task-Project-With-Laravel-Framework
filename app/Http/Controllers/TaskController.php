@@ -42,17 +42,17 @@ class TaskController extends Controller
         }
 
 
-        public function destroy($id)
-        {
-            $tasks = DB::table('tasks')->where('id', $id)->first();
-
+        public function destroy($id){
+            $task = DB::table('tasks')->where('id',$id)->first();
+    
             //Delete image file if exists
-            if($tasks->image && Storage::disk('public')->exists($tasks->image)){
-                Storage::disk('public')->delete($tasks->image);
+            if ($task->image && Storage::disk('public')->exists($task->image)){
+                Storage::disk('public')->delete($task->image);
             }
-
-            //Delete task from database
-            DB::table('tasks')->where('id', $id)->delete();
-            return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
+    
+            //Delete Data from database
+    
+            DB::table('tasks')->where('id',$id)->delete();
+            return redirect()->route('tasks.index')->with('success','Task deleted successfully');
         }
 }
