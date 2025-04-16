@@ -5,11 +5,19 @@
 <h2>Task List</h2>
 <a href="{{ route('tasks.create') }}" class="btn btn-primary mb-3">+Add Tasks</a>
 
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        
+    @endif
+
+
 <table class="table table-bordered">
 
     <thead>
         <tr>
-            <th>#</th>
+            <th>SL No</th>
             <th>Title</th>
             <th>Description</th>
             <th>Image</th>
