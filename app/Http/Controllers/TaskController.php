@@ -32,10 +32,12 @@ class TaskController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'image' => $imagePath,
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
     
         }
 
-        
+
 }
