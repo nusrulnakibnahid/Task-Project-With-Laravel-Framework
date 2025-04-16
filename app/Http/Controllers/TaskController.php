@@ -22,7 +22,7 @@ class TaskController extends Controller
 
     public function store(Request $request){
 
-        $imagePPath = null;
+        $imagePath = null;
         if($request->hasFile('image')){
             $imagePath = $request->file('image')->store('tasks','public');
             
