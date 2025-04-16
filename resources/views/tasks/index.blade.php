@@ -17,6 +17,8 @@
         </tr>
     </thead>
     <tbody>
+
+
         @foreach ($tasks as $task )
 
         <tr>
@@ -25,7 +27,7 @@
             <td>{{ $task->description }}</td>
             <td>
                 @if ($task->image)
-                    <img src="{{ $task->image) }}" alt="Task Image" width="90">
+                    <img src="{{ $task->image) }}" width="90">
                 @else
                     No Image
                 @endif
