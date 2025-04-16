@@ -24,13 +24,18 @@ class TaskController extends Controller
 
         $imagePPath = null;
         if($request->hasFile('image')){
-            $imagePath = $request->file('image')->store('images','public');
-            $imagePath = '/storage/'.$imagePath;
+            $imagePath = $request->file('image')->store('tasks','public');
+            
         }
-    }
+
+        DB:: table('tasks')->insert([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $imagePath,
+        ]);
 
     
+        }
 
-
-
+        
 }
