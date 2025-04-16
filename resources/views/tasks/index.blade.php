@@ -44,7 +44,16 @@
         
             <td>
                 <a href="" class="btn btn-warning btn-sm">Edit</a>
-                <button class="btn btn-danger btn-sm ">Delete</button>
+
+                <form action="{{ route('$tasks.destroy') }}" method="POST" style="display:inline-block;">
+                    @csrf
+
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this task?')">
+                        Delete
+                    </button>
+
+                </form>
+                
             </td>
 
         </tr>
