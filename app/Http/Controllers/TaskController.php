@@ -38,8 +38,13 @@ class TaskController extends Controller
 
         return redirect()->route('tasks.index')->with('success','Task created successfully!');
 
-    
         }
 
 
+        public function destroy($id)
+        {
+            $tasks = DB::table('tasks')->where('id', $id)->first();
+           
+
+        }
 }
