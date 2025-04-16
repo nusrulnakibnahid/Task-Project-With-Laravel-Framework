@@ -4,7 +4,7 @@
 
 <h2>Edit Tasks</h2>
 
-<form method="POST" action="" enctype="multipart/form-data">
+<form method="POST" action="{{ route('tasks.update', $task->id) }}" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
         <label for="title">Title</label>
