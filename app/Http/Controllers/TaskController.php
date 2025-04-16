@@ -46,6 +46,9 @@ class TaskController extends Controller
             return view('tasks.edit',compact('task'));
         }
 
+
+        
+
         public function update(Request $request,$id){
             $task = DB::table('tasks')->where('id',$id)->first();
             $imagePath = $task->image;
