@@ -53,5 +53,6 @@ class TaskController extends Controller
 
             //Delete task from database
             DB::table('tasks')->where('id', $id)->delete();
+            return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
         }
 }
