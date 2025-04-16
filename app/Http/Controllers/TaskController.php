@@ -9,7 +9,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks =  DB::table('tasks')->paginate(3);
+        $tasks =  DB::table('tasks')->orderBy('id','desc')->paginate(3);
         // return view('tasks.index', ['tasks' => $tasks]);
         return view('tasks.index', compact('tasks'));
  
