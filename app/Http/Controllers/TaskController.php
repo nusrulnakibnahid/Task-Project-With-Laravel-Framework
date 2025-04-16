@@ -36,6 +36,8 @@ class TaskController extends Controller
             'updated_at' => now(),
         ]);
 
+        return redirect()->route('tasks.index')->with('success','Task created successfully!');
+
     
         }
 
