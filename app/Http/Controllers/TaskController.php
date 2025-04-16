@@ -41,6 +41,21 @@ class TaskController extends Controller
 
         }
 
+        public function edit($id){
+            $task = DB::table('tasks')->where('id',$id)->first();
+            return view('tasks.edit',compact('task'));
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         public function destroy($id){
             $task = DB::table('tasks')->where('id',$id)->first();
