@@ -8,7 +8,7 @@
     @csrf
     <div class="mb-3">
         <label for="title">Title</label>
-        <input type="text" name="title" class="form-control" required>
+        <input type="text" name="title" value="{{ $tasks->title }}" class="form-control" required>
     </div>
 
     <div class="mb-3">

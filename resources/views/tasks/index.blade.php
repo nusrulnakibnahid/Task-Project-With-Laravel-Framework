@@ -43,7 +43,7 @@
 
         
             <td>
-                <a href="" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-warning btn-sm">Edit</a>
 
                 <form action="{{ route('tasks.destroy', $task->id ) }}" method="POST" style="display:inline-block;">
                     @csrf
