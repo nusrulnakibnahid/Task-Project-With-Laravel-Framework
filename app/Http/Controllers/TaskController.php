@@ -19,4 +19,18 @@ class TaskController extends Controller
     {
         return view('tasks.create');
     }
+
+    public function store(Request $request){
+
+        $imagePPath = null;
+        if($request->hasFile('image')){
+            $imagePath = $request->file('image')->store('images','public');
+            $imagePath = '/storage/'.$imagePath;
+        }
+    }
+
+    
+
+
+
 }

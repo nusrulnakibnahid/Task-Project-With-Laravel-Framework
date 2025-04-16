@@ -17,13 +17,13 @@
     </div>
 
     <div class="mb-3">
-        <label for="description">Description</label>
+        <label for="description">Title</label>
         <input type="file" name="image" class="form-control" ></input>
     </div>
 
-    <button type="submit" class="btn btn">Create</button>
+    <button type="submit" class="btn btn-success">Create</button>
     <a href="{{ route('tasks.index') }}" class="btn btn-secondary">Back</a>
-    
+
 
 </form>
 
