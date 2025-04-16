@@ -27,7 +27,7 @@
             <td>{{ $task->description }}</td>
             <td>
                 @if ($task->image)
-                    <img src="{{ $task->image) }}" width="90">
+                    <img src="{{ asset('storage/'.$task->image) }}" width="90">
                 @else
                     No Image
                 @endif
