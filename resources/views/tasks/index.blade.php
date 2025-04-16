@@ -3,7 +3,7 @@
 @section('content')
 
 <h2>Task List</h2>
-<a href="" class="btn btn-primary mb-3">+Add Tasks</a>
+<a href="{{ route('tasks.create') }}" class="btn btn-primary mb-3">+Add Tasks</a>
 
 <table class="table table-bordered">
 
