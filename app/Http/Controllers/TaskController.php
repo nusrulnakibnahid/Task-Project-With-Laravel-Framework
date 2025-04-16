@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class TaskController extends Controller
 {
@@ -44,7 +45,13 @@ class TaskController extends Controller
         public function destroy($id)
         {
             $tasks = DB::table('tasks')->where('id', $id)->first();
-           
 
+            //Delete image file if exists
+            if($tasks->image && Storage::disk('public')->exists($tasks->image)){
+                Storage::disk('public')->delete($tasks->image);
+            }
+
+            //Delete task from database
+            DB::table('tasks')->where('id', $id)->delete();
         }
 }
